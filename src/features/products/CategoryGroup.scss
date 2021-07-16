@@ -1,0 +1,113 @@
+.categoryGoup {
+  padding: 50px 0 100px;
+  background-color: #f1f5f9;
+
+  &__title {
+    margin: 0 15px 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    border-bottom: 10px #d0d4d8 dotted;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  &__productItem {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 20px);
+    // for single products, stop them filling all the space
+    max-width: calc(50% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 3px 3px #20212129;
+    cursor: default;
+    transform: scale(1);
+    transition: all ease .4s;
+
+    @media (min-width: 750px) {
+      flex: 0 1 calc(33.3% - 20px);
+    }
+
+    @media (min-width: 1000px) {
+      flex: 0 1 calc(25% - 20px);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+  }
+
+  &__productImg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  &__textContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    // make sure the price, stock and buy btn
+    // are aligned to the bottom, allowing the
+    // product title to grow without spoiling alignment
+    div {
+      margin-top: auto;
+    }
+  }
+
+  &__productTitle {
+    margin-bottom: 0px;
+    color: #276f79;
+  }
+
+  &__productPrice {
+    margin: 10px 0 25px;
+    font-size: 20px;
+    // font-weight: bold;
+  }
+
+  &__buyBtn {
+    width: 85%;
+    margin: 15px 0 0;
+    padding: 15px 10px;
+    background-color: #73EBD1;
+    border: 0;
+    border-radius: 16px;
+    color: #365369;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all ease .4s;
+
+  @media (min-width: 700px) {
+    padding: 15px 45px;
+  }
+
+    @media (hover: hover) {
+      &:hover {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.selectCategoryMsg {
+  margin: 40px 0;
+  font-size: 20px;
+  text-align: center;
+}

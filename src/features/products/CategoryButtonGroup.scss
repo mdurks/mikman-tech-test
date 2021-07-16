@@ -1,0 +1,109 @@
+.categoryButtonGroup {
+  padding: 50px 0 0;
+  background-color: #f1f5f9;
+
+  &__scrollWrapper {
+      position: relative;
+    }
+
+  &__navList {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: auto;
+    padding: 0 0 5px;
+    overflow-x: scroll;
+    transition: all ease .4s;
+
+    // narrow the navlist to allow the left/right
+    // buttons to fit on the page still
+    @media (min-width: 1000px) {
+      overflow-x: hidden;
+      width: calc(100% - 130px);
+    }
+
+    @media (min-width: 1150px) {
+      width: 100%;
+    }
+
+    li {
+      flex: 0 0 114px;
+      margin: 0 8px;
+
+      @media (min-width: 700px) {
+        flex: 0 0 150px;
+      }
+    }
+
+    &__arrow_left,
+    &__arrow_right {
+      // hide the left/right buttons for mobile
+      display: none;
+
+      @media (min-width: 1000px) {
+        display: block;
+        position: absolute;
+        // move the left/right buttons insdie the 'centralContainer'
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 100%;
+        background: #88b3b9;
+        color: white;
+        border: none;
+        transition: all ease .4s;
+      }
+
+      // when the browser is wide enough
+      // the left/right buttons sit outside the 'centralContainer'
+      @media (min-width: 1150px) {
+        left: -60px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: #6e9ea5;
+        }
+      }
+    }
+
+    &__arrow_right {
+      left: auto;
+      right: 5px;
+
+      @media (min-width: 1150px) {
+        right: -60px;
+      }
+    }
+  }
+
+  &__overRideGrp {
+    padding: 20px 0 0;
+    text-align: center;
+
+    @media (min-width: 1000px) {
+      text-align: right;
+    }
+  }
+
+  &__overRideBtn {
+    margin-left: 10px;
+    padding: 13px 18px 11px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    transition: all ease .4s;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #88b3b9;
+      }
+    }
+  }
+}
